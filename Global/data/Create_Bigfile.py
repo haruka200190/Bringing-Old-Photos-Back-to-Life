@@ -29,9 +29,9 @@ def make_dataset(dir):
     return images
 
 ### Modify these 3 lines in your own environment
-indir="/home/ziyuwan/workspace/data/temp_old"
-target_folders=['VOC','Real_L_old','Real_RGB_old']
-out_dir ="/home/ziyuwan/workspace/data/temp_old"
+indir="/content/photo_restoration/training_data"
+target_folders=['VOC_RGB_JPEGImages','Real_L_old','Real_RGB_old']
+out_dir ="/content/photo_restoration/bigfiles"
 ###
 
 if os.path.exists(out_dir) is False:
@@ -59,5 +59,5 @@ for target_folder in target_folders:
              wfid.write(struct.pack('i', len(img_bytes)))
              wfid.write(img_bytes)
 
-             if i % 1000 == 0:
+             if i % 100 == 0:
                  print('write %d images done' % i)
