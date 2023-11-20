@@ -28,10 +28,10 @@ def make_dataset(dir):
 
     return images
 
-### Modify these 3 lines in your own environment
+### these 3 lines were modified to fit own environment
 indir="/content/photo_restoration/training_data"
 target_folders=['VOC_RGB_JPEGImages','Real_L_old','Real_RGB_old']
-out_dir ="/content/photo_restoration/bigfiles"
+out_dir ="/content/photo_restoration/training_data/bigfiles"
 ###
 
 if os.path.exists(out_dir) is False:
@@ -59,5 +59,5 @@ for target_folder in target_folders:
              wfid.write(struct.pack('i', len(img_bytes)))
              wfid.write(img_bytes)
 
-             if i % 100 == 0:
+             if i % 100 == 0: #original: i%1000
                  print('write %d images done' % i)

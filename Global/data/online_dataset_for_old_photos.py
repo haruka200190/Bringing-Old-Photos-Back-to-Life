@@ -196,7 +196,9 @@ class UnPairOldPhotos_SR(BaseDataset):  ## Synthetic + Real Old
         ####
         print("-------------Filter the imgs whose size <256 in VOC-------------")
         self.filtered_imgs_clean=[]
+        # for i in range(1000): used for small test
         for i in range(len(self.loaded_imgs_clean)):
+          
             img_name,img=self.loaded_imgs_clean[i]
             h,w=img.size
             if h<256 or w<256:
